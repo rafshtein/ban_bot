@@ -14,6 +14,7 @@ bot = AsyncTeleBot(config.token)
 async def send_welcome(message):
     text = 'Hi, I am EchoBot.\nJust write me something and I will repeat it!'
     await bot.reply_to(message, text)
+
 @bot.message_handler(content_types=['new_chat_members'])
 async def make_some(message):
     bot.send_message(message.chat.id, 'I accepted a new user!')
